@@ -4,108 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatflow - Automação Inteligente</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
             margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0a0f26, #1a1f4c, #003cff);
-            text-align: center;
-            color: white;
-        }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            color: #ffffff;
+            padding: 20px;
         }
         h1 {
-            color: #00d4ff;
-            text-shadow: 2px 2px 10px rgba(0, 212, 255, 0.8);
+            color: #00BFFF; /* Azul futurista */
         }
         h2 {
-            color: #ff4081;
+            color: #00FF7F; /* Verde futurista */
         }
-        p {
-            color: #e0e0e0;
+        .contact {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
         }
-        .footer img {
-            width: 20px;
-            height: 20px;
+        .contact i {
             margin-right: 10px;
-            vertical-align: middle;
+        }
+        .services {
+            list-style-type: none;
+            padding: 0;
+        }
+        .services li {
+            margin: 10px 0;
+            background: #1A1A1A; /* Fundo escuro */
+            padding: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .services li:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="chatflow-banner.jpg" alt="Banner Chatflow" class="banner">
-        <h1>Bem-vindo à Chatflow</h1>
-        <p>Automação inteligente para WhatsApp e chatbots.</p>
-        <p>Facilitamos o atendimento e o agendamento automatizado para sua empresa.</p>
-        
-        <div class="chat-animation" id="chat"></div>
-        
-        <script>
-            const chatContainer = document.getElementById("chat");
-            const messages = [
-                { sender: "Cliente", text: "Olá, posso agendar um horário?" },
-                { sender: "IA", text: "Claro! Para qual data e horário você deseja agendar?" },
-                { sender: "Cliente", text: "Amanhã às 15h." },
-                { sender: "IA", text: "Agendamento confirmado para amanhã às 15h." },
-                { sender: "IA", text: "Precisa de mais alguma coisa?" }
-            ];
-            
-            function addMessages(iteration) {
-                let i = 0;
-                function showMessage() {
-                    if (i < messages.length) {
-                        let msgElement = document.createElement("p");
-                        msgElement.innerHTML = `<strong>${messages[i].sender}:</strong> ${messages[i].text}`;
-                        chatContainer.appendChild(msgElement);
-                        i++;
-                        setTimeout(showMessage, 2000); // Aguarda 2 segundos entre mensagens
-                    } else if (iteration < 9) {
-                        setTimeout(() => {
-                            chatContainer.innerHTML = "";
-                            addMessages(iteration + 1);
-                        }, 3000);
-                    }
-                }
-                showMessage();
-            }
-            
-            addMessages(0);
-        </script>
-        
-        <h2>Nossos Serviços</h2>
-        <p>🌟 Chatbots Inteligentes</p>
-        <p>📅 Agendamento Automático</p>
-        <p>💬 Atendimento Personalizado</p>
-        <p>🔗 Integração com WhatsApp e Instagram</p>
-        
-        <h2>Sobre Nós</h2>
-        <p>Somos uma empresa especializada em automação de conversas. Nosso objetivo é tornar o atendimento mais eficiente e humanizado com IA.</p>
-        
-        <h2>Por que utilizar IA?</h2>
-        <p><strong>WhatsApp Bot Tradicional:</strong> Funciona com fluxos pré-definidos, não entende perguntas complexas e precisa de atualizações manuais.</p>
-        <p><strong>Automação com IA:</strong> Compreende linguagem natural, aprende com interações e personaliza o atendimento, tornando-o mais eficiente.</p>
-        
-        <a href="#" class="btn">Saiba Mais</a>
-        <a href="https://www.instagram.com/chatflowtech" class="btn" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram
-        </a>
-        
-        <div class="footer">
-            <p><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> <a href="https://www.instagram.com/chatflowtech" target="_blank">@chatflowtech</a></p>
-            <p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> (21) 98616-6940</p>
-            <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Gmail_Icon.png" alt="Gmail"> chatflowautomacao@gmail.com</p>
-            <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
-        </div>
+
+    <h1>Bem-vindo à Chatflow – Sua Solução em Automação Inteligente</h1>
+    <p>Transforme seu atendimento com automação inteligente para WhatsApp e chatbots personalizados.</p>
+
+    <div class="contact">
+        <i class="fas fa-phone-alt"></i>
+        <p>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/5521986166940" style="color: #00BFFF;">(21) 98616-6940</a>
+        </p>
     </div>
+
+    <div class="contact">
+        <i class="fab fa-instagram"></i>
+        <p>
+            <strong>Instagram:</strong> <a href="https://instagram.com/chatflowtech" style="color: #E1306C;">@chatflowtech</a>
+        </p>
+    </div>
+
+    <h2>Nossos Serviços</h2>
+    <ul class="services">
+        <li>🌟 Chatbots Inteligentes: Respostas instantâneas que melhoram a experiência do cliente.</li>
+        <li>📅 Agendamento Automático: Marque compromissos em minutos, sem esforço.</li>
+        <li>💬 Atendimento Personalizado: Experiências sob medida que encantam seus clientes.</li>
+        <li>🔗 Integração com WhatsApp e Instagram: Conecte-se onde seus clientes estão.</li>
+    </ul>
+
+    <footer>
+        <h2>Saiba mais sobre nós!</h2>
+        <p>Na Chatflow, somos especialistas em automação de conversas. Nossa missão é tornar o atendimento mais eficiente e humanizado com IA.</p>
+    </footer>
+
 </body>
 </html>
